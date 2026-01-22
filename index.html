@@ -1,142 +1,445 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MotionAI.ai — Intelligent Motion Infrastructure</title>
-  <meta name="description" content="MotionAI.ai builds the execution layer that turns intelligence into real-world action." />
-  <link rel="icon" href="data:," />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MotionAI.ai — The Execution Layer for Physical AI Systems</title>
+  <meta name="description" content="MotionAI.ai is a privately held AI platform designed to function as the execution layer for robotics, logistics, simulation, and real-world autonomous systems." />
+  <meta name="theme-color" content="#0b0f1a" />
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
-      background: #0a0f1c;
-      color: #e6e9f2;
-      line-height: 1.6;
+    :root{
+      --bg:#070A12;
+      --panel:#0B1020;
+      --panel2:#0C1326;
+      --text:#EAF0FF;
+      --muted:#A9B4D0;
+      --line:rgba(255,255,255,.10);
+      --accent:#F6A63A;
+      --accent2:#3B82F6;
+      --good:#22C55E;
+      --bad:#EF4444;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:16px;
+      --max:1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    .wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 96px 24px;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(59,130,246,.18), transparent 55%),
+        radial-gradient(900px 550px at 85% 20%, rgba(246,166,58,.14), transparent 55%),
+        radial-gradient(800px 500px at 50% 95%, rgba(59,130,246,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
     }
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(90,110,255,0.15);
-      color: #9aa8ff;
-      font-size: 14px;
-      margin-bottom: 24px;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
     }
-    h1 {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0 0 20px;
+    .navin{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; padding:14px 0}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(246,166,58,.95), rgba(59,130,246,.95));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      display:grid; place-items:center; font-weight:900; letter-spacing:.5px;
     }
-    h2 {
-      font-size: 34px;
-      margin-top: 96px;
-      margin-bottom: 18px;
+    .brand b{font-size:16px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .links a{font-size:13px; color:var(--muted)}
+    .links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:600;
+      gap:10px;
     }
-    p {
-      font-size: 20px;
-      color: #c7cdfa;
-      max-width: 860px;
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), #ffcc6b);
+      color:#111827;
+      box-shadow: 0 12px 40px rgba(246,166,58,.18);
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+    .btn.secondary{
+      border:none;
+      background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(59,130,246,.70));
+      box-shadow: 0 12px 40px rgba(59,130,246,.16);
     }
-    .card {
-      background: #111735;
-      border-radius: 16px;
-      padding: 28px;
+    .hero{padding:54px 0 28px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
     }
-    form {
-      margin-top: 56px;
-      max-width: 520px;
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .links{display:none}
     }
-    input, textarea, button {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 14px;
-      border-radius: 10px;
-      border: none;
-      font-size: 16px;
+    h1{
+      margin:0;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.6px;
     }
-    input, textarea {
-      background: #0f1430;
-      color: #fff;
+    .sub{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:60ch;
     }
-    button {
-      background: #5b6bff;
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .pill{
+      font-size:12px; color:rgba(234,240,255,.92);
+      border:1px solid var(--line);
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
     }
-    footer {
-      margin-top: 140px;
-      padding-top: 40px;
-      border-top: 1px solid #1e2554;
-      font-size: 14px;
-      color: #7e86c7;
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
     }
+    .panel h3{margin:0 0 8px; font-size:16px}
+    .panel p{margin:0; color:var(--muted); font-size:13px}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .cards{grid-template-columns:1fr}
+    }
+    .card{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(11,16,32,.55);
+    }
+    .card b{display:block; margin-bottom:6px}
+    .card span{color:var(--muted); font-size:13px}
+    section{padding:26px 0}
+    .h2{
+      font-size:22px; margin:0 0 8px;
+      letter-spacing:-.2px;
+    }
+    .p{margin:0; color:var(--muted); max-width:78ch}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+    }
+    .list{margin:12px 0 0; padding:0; list-style:none}
+    .list li{
+      margin:10px 0; padding-left:18px; position:relative; color:var(--muted)
+    }
+    .list li:before{
+      content:"";
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      position:absolute; left:0; top:.55em;
+    }
+    .formgrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){
+      .formgrid{grid-template-columns:1fr}
+    }
+    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(246,166,58,.55);
+      box-shadow: 0 0 0 4px rgba(246,166,58,.12);
+    }
+    textarea{min-height:120px; resize:vertical}
+    .small{font-size:12px; color:var(--muted); margin-top:10px}
+    .status{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+    .rightbox{
+      display:flex; flex-direction:column; gap:14px;
+      height:100%;
+    }
+    .kpi{
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    }
+    .kpi .card{background: rgba(12,19,38,.55)}
+    .kpi b{font-size:18px}
+    .muter{color:var(--muted)}
   </style>
 </head>
 <body>
-
-  <div class="wrap">
-
-    <div class="badge">AI Infrastructure</div>
-
-    <h1>Motion is the layer between intelligence and action.</h1>
-
-    <p>
-      MotionAI.ai is building the execution infrastructure that allows intelligent systems
-      to move, coordinate, and operate in the real world.
-      Decisions don’t matter until something actually happens.
-    </p>
-
-    <h2>Why MotionAI</h2>
-
-    <p>
-      Intelligence is accelerating.
-      Execution is the bottleneck.
-      MotionAI exists to close that gap.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Agent Execution</h3>
-        <p>Turn reasoning systems into autonomous action across environments and workflows.</p>
+  <div class="nav">
+    <div class="wrap navin">
+      <div class="brand">
+        <div class="logo">MA</div>
+        <div>
+          <b>MotionAI.ai</b>
+          <span>The Execution Layer for Physical AI Systems</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>Workflow Orchestration</h3>
-        <p>Coordinate humans, agents, and automation into a single execution layer.</p>
+      <div class="links">
+        <a href="#platform">Platform</a>
+        <a href="#why">Why</a>
+        <a href="#inquiries">Inquiries</a>
       </div>
-      <div class="card">
-        <h3>Real World Readiness</h3>
-        <p>Built for latency, uncertainty, and operational constraints.</p>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn" href="#inquiries">Strategic Inquiries</a>
+        <a class="btn primary" href="#inquiries">Limited Access</a>
       </div>
     </div>
-
-    <h2>Contact</h2>
-
-    <form action="https://formspree.io/f/xnjjngql" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" rows="5" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-
-    <footer>
-      © MotionAI.ai. All rights reserved.
-    </footer>
-
   </div>
-
+  <main class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <h1>The Execution Layer for Physical AI Systems</h1>
+          <p class="sub">
+            MotionAI.ai is a privately held AI platform designed to function as the execution layer beneath physical-world intelligent systems —
+            bridging digital intent to real-world action with zero-latency control, fault-tolerant reliability, and full observability.
+          </p>
+          <div class="pillrow">
+            <div class="pill">Infrastructure-first</div>
+            <div class="pill">Physical-world native</div>
+            <div class="pill">Latency-zero</div>
+            <div class="pill">Strategic positioning</div>
+          </div>
+          <div class="cta">
+            <a class="btn secondary" href="#inquiries">Strategic Inquiries</a>
+            <a class="btn primary" href="#inquiries">Request Limited Access</a>
+            <a class="btn" href="#platform">View Platform</a>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <b>Not a simulation toy</b>
+              <span>Built for real-world execution — not just modeling.</span>
+            </div>
+            <div class="card">
+              <b>Not consumer robotics</b>
+              <span>Enterprise-grade, mission-critical systems at scale.</span>
+            </div>
+            <div class="card">
+              <b>Built for ownership</b>
+              <span>Durable brand, expandable scope, integration-first architecture.</span>
+            </div>
+          </div>
+        </div>
+        <aside class="rightbox">
+          <div class="panel">
+            <h3>Mandate</h3>
+            <p>
+              Digital AI systems excel at planning and reasoning — but fail when physical execution is required. MotionAI.ai is designed to close that gap, providing the reliable, observable, and controllable execution layer physical AI demands.
+            </p>
+          </div>
+          <div class="kpi">
+            <div class="card">
+              <b>Platform</b>
+              <span class="muter">Execution layer</span>
+            </div>
+            <div class="card">
+              <b>Scope</b>
+              <span class="muter">Physical AI systems</span>
+            </div>
+            <div class="card">
+              <b>Fit</b>
+              <span class="muter">Robotics + logistics + simulation</span>
+            </div>
+            <div class="card">
+              <b>Access</b>
+              <span class="muter">Selective</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Availability</h3>
+            <p>
+              MotionAI.ai is privately held and developed deliberately. Engagement is limited to strategic inquiries,
+              platform alignment discussions, and acquisition-oriented conversations.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </header>
+    <section id="platform">
+      <h2 class="h2">Platform</h2>
+      <p class="p">
+        MotionAI.ai is architected as an execution-first asset — focused on translating digital plans into reliable physical outcomes,
+        with full observability, fault tolerance, and human-in-the-loop control when needed.
+      </p>
+      <div class="two">
+        <div class="panel">
+          <h3>What it does</h3>
+          <ul class="list">
+            <li>Executes real-time control loops for robotics, drones, vehicles, and smart machinery.</li>
+            <li>Optimizes logistics flows, fleet routing, and supply-chain actions in dynamic environments.</li>
+            <li>Runs high-fidelity digital twins and simulation environments for testing and validation.</li>
+            <li>Provides observable, auditable execution traces for mission-critical applications.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>What it is not</h3>
+          <ul class="list">
+            <li>Not positioned as a consumer robotics product.</li>
+            <li>Not a simulation-only tool or planning engine.</li>
+            <li>Not a short-term feature race or marketing wrapper.</li>
+            <li>Not dependent on a single interface for value creation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="why">
+      <h2 class="h2">Why this layer matters</h2>
+      <p class="p">
+        Digital AI excels at reasoning and planning — but physical systems demand execution that is fast, reliable, observable, and controllable. MotionAI.ai is designed to close that gap — turning AI intent into physical reality at scale.
+      </p>
+      <div class="two">
+        <div class="panel">
+          <h3>Design principle</h3>
+          <p>
+            Plans are worthless without execution. MotionAI.ai is built to be integrated quietly into existing physical systems,
+            strengthening robotics, logistics, and simulation stacks rather than competing with them.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Strategic fit</h3>
+          <p>
+            Intended to align with robotics manufacturers, logistics operators, simulation platforms, defense contractors,
+            and AI-native infrastructure environments.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="inquiries">
+      <h2 class="h2">Strategic inquiries</h2>
+      <p class="p">
+        Use the form below for partnership, platform alignment, or acquisition-oriented conversations.
+        Messages are routed privately via Formspree.
+      </p>
+      <div class="panel" style="margin-top:14px;">
+        <form id="contactForm" action="https://formspree.io/f/xnjjngql" method="POST">
+          <input type="hidden" name="_subject" value="MotionAI.ai — New Inquiry" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="formgrid">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required />
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Company / organization" />
+            </div>
+            <div>
+              <label for="role">Role</label>
+              <input id="role" name="role" type="text" placeholder="Title / role" />
+            </div>
+            <div>
+              <label for="interest">Inquiry type</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Strategic partnership</option>
+                <option>Platform alignment</option>
+                <option>Acquisition inquiry</option>
+                <option>Press / media</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Briefly describe what you're looking to accomplish." required></textarea>
+          </div>
+          <div style="display:none;">
+            <label>Leave this empty</label>
+            <input name="_gotcha" />
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <span class="small">By submitting, you agree to be contacted regarding your inquiry.</span>
+          </div>
+          <div id="formStatus" class="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      © 2026 MotionAI.ai — All rights reserved.<br>
+      This domain and associated intellectual property are privately owned.<br>
+      Strategic partnerships or acquisition discussions may be considered.<br>
+      For informational purposes only. Not an offer to sell.
+    </footer>
+  </main>
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Sending…";
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          statusEl.textContent = "Thanks — your inquiry was sent.";
+          statusEl.style.color = "rgba(34,197,94,.95)";
+        } else {
+          const out = await res.json().catch(() => ({}));
+          statusEl.textContent = out?.errors?.[0]?.message || "Something went wrong. Please try again.";
+          statusEl.style.color = "rgba(239,68,68,.95)";
+        }
+      } catch (err) {
+        statusEl.textContent = "Network error. Please try again.";
+        statusEl.style.color = "rgba(239,68,68,.95)";
+      }
+    });
+  </script>
 </body>
 </html>
