@@ -1,46 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>MotionAI.ai | The Execution Layer for Physical AI Systems</title>
-  <meta name="description" content="MotionAI.ai is the execution layer that translates intelligence into reliable real world action. Privately held. Selectively accessible." />
-
-  <style>
-    :root{
-      --bg0:#070A12;
-      --bg1:#0A1226;
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,.72);
-      --muted2:rgba(234,240,255,.55);
-      --card:rgba(255,255,255,.06);
-      --border:rgba(255,255,255,.12);
-      --accent:#39D7FF;
-      --accent2:#6C7BFF;
-      --shadow:0 18px 60px rgba(0,0,0,.46);
-      --radius:18px;
-    }
-
-…
-[10:59 PM, 1/21/2026] .: <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>MotionAI.ai — “Execution infrastructure for autonomous and physical AI”</title>
-  <meta name="description" content="MotionAI.ai is the execution layer for physical AI systems. Infrastructure-grade control, reliability, and observability designed for enterprise adoption and acquisition readiness." />
-  <meta name="theme-color" content="#07101f" />
-
-  <style>
-    :root{
-      --bg:#050b14;
-      --bg2:#07101f;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --stroke:rgba(255,255,255,.10);
-      --text:#eaf2ff;
-      --muted:rgba(234,242,255,.70);
-      --muted2:rgba…
 [11:08 PM, 1/21/2026] .: <!doctype html>
 <html lang="en">
 <head>
@@ -60,450 +17,675 @@
       --text:#eaf0ff;
       --muted:rgba(234,240,255,.72);
       --muted2:rgba(234,240,255,.55);
-      --accent:#20e3ff;
-      --accent2:#7c4dff;
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:14px;
-      --max:1120px;
+   …
+[9:35 AM, 1/22/2026] .: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MotionAI.ai — Execution infrastructure for autonomous and physical AI. Acquisition-grade domain asset positioned for robotics, industrial automation, logistics, and safety-critical systems." />
+  <meta name="theme-color" content="#071018" />
+
+  <title>MotionAI.ai — Execution infrastructure for autonomous and physical AI</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MotionAI.ai — Execution infrastructure for autonomous and physical AI" />
+  <meta property="og:description" content="Infrastructure-grade positioning for autonomy, robotics, logistics, and safety-critical systems. Acquisition-ready brand asset." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.motionai.ai" />
+
+  <style>
+    :root{
+      /* MotionAI colorway (different from TravelAir): deep slate + electric cyan */
+      --bg0:#071018;
+      --bg1:#0A1622;
+      --card:#0B1B2A;
+      --stroke:rgba(255,255,255,.10);
+      --stroke2:rgba(120,220,255,.22);
+
+      --text:#EAF2FF;
+      --muted:rgba(234,242,255,.72);
+      --muted2:rgba(234,242,255,.56);
+
+      --accent:#22D3EE;     /* cyan */
+      --accent2:#60A5FA;    /* soft blue */
+      --good:#34D399;
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+
+      --max: 1120px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 15% 20%, rgba(32,227,255,.18), transparent 55%),
-        radial-gradient(900px 500px at 85% 25%, rgba(124,77,255,.16), transparent 55%),
-        radial-gradient(900px 600px at 50% 110%, rgba(32,227,255,.10), transparent 55%),
+        radial-gradient(900px 520px at 18% 10%, rgba(34,211,238,.18), transparent 62%),
+        radial-gradient(900px 520px at 82% 20%, rgba(96,165,250,.14), transparent 60%),
+        radial-gradient(700px 460px at 50% 85%, rgba(34,211,238,.10), transparent 58%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x:hidden;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 70px}
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:100%; max-width:var(--max); margin:0 auto; padding: 28px 18px 70px; }
 
     /* Top bar */
-    .top{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,11,20,.72);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding: 8px 0 24px;
     }
-    .top .inner{
-      max-width:var(--max); margin:0 auto; padding:14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
     }
-    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
     .logo{
-      width:38px; height:38px; border-radius:12px;
+      width:42px; height:42px; border-radius:14px;
       background:
-        radial-gradient(circle at 30% 30%, rgba(32,227,255,.95), rgba(32,227,255,.18) 55%, rgba(255,255,255,.06) 56%),
-        radial-gradient(circle at 70% 70%, rgba(124,77,255,.85), transparent 55%);
-      box-shadow: 0 10px 30px rgba(32,227,255,.16);
-      border:1px solid rgba(255,255,255,.12);
-      display:grid; place-items:center;
-      font-weight:700;
-      letter-spacing:.02em;
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.20), transparent 60%),
+        linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.75));
+      box-shadow: 0 14px 40px rgba(34,211,238,.20);
+      border: 1px solid rgba(255,255,255,.16);
     }
-    .brand h1{font-size:14px; margin:0; line-height:1.1}
-    .brand p{margin:0; font-size:12px; color:var(--muted2); line-height:1.1}
-
-    nav{display:flex; gap:18px; align-items:center; justify-content:center; flex:1}
-    nav a{
-      font-size:13px; color:var(--muted);
-      padding:8px 10px; border-radius:10px;
-      border:1px solid transparent;
+    .brand h1{
+      margin:0; font-size:16px; letter-spacing:.2px; font-weight:700;
     }
-    nav a:hover{border-color:rgba(255,255,255,.10); background:rgba(255,255,255,.05); color:var(--text)}
-
-    .cta{display:flex; gap:10px; align-items:center; min-width:220px; justify-content:flex-end}
-    .btn{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:12px;
+    .brand p{
+      margin:2px 0 0; font-size:12px; color:var(--muted2);
+    }
+    .nav{
+      display:flex; align-items:center; gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
       font-size:13px;
-      cursor:pointer;
-      transition: transform .08s ease, background .18s ease, border-color .18s ease;
-      white-space:nowrap;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius:12px;
+      border: 1px solid transparent;
     }
-    .btn:hover{background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.18)}
-    .btn:active{transform: translateY(1px)}
+    .nav a:hover{
+      color:var(--text);
+      border-color: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .btn:hover{ border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.06); }
     .btn.primary{
-      border-color: rgba(32,227,255,.35);
-      background: linear-gradient(135deg, rgba(32,227,255,.20), rgba(124,77,255,.16));
-      box-shadow: 0 14px 40px rgba(32,227,255,.12);
+      background: linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.85));
+      border-color: rgba(255,255,255,.18);
+      color:#041018;
     }
+    .btn.primary:hover{ filter: brightness(1.02); }
 
     /* Hero */
     .hero{
-      padding:34px 0 10px;
-      display:grid;
-      grid-template-columns: 1.25fr .85fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .heroCard{
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
-      border-radius: var(--radius);
-      padding:26px;
-      box-shadow: var(--shadow);
       position:relative;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:stretch;
+      margin-top: 4px;
+    }
+    .panel{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroCard:before{
-      content:"";
-      position:absolute; inset:-1px;
-      background:
-        radial-gradient(600px 220px at 18% 20%, rgba(32,227,255,.20), transparent 60%),
-        radial-gradient(520px 220px at 85% 20%, rgba(124,77,255,.16), transparent 60%);
-      pointer-events:none;
-      opacity:.95;
+    .heroLeft{
+      padding: 28px 26px 22px;
+      position:relative;
     }
-    .heroCard > *{position:relative}
-
     .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      font-size:12px; color:var(--muted);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      padding:7px 10px;
-      border-radius:999px;
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .25px;
     }
-    .kdot{
-      width:8px; height:8px; border-radius:50%;
+    .dot{
+      width:8px; height:8px; border-radius:99px;
       background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(32,227,255,.16);
+      box-shadow: 0 0 0 6px rgba(34,211,238,.12);
     }
-
-    .headline{
-      margin:14px 0 10px;
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-.02em;
+    .hero h2{
+      margin: 14px 0 10px;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.6px;
     }
     .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+    .ctaRow{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 18px;
+      align-items:center;
+    }
+    .mini{
+      color: var(--muted2);
+      font-size: 12px;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .mini b{ color: var(--text); font-weight:700; }
+
+    .heroRight{
+      padding: 20px 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .metric{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 14px;
+    }
+    .metric .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .badge{
+      font-size: 11px;
+      letter-spacing:.3px;
+      color: rgba(4,16,24,.92);
+      background: linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.85));
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+    .metric h3{
+      margin: 10px 0 6px;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+    }
+    .metric p{
       margin:0;
-      font-size:15px;
-      line-height:1.55;
-      color:var(--muted);
-      max-width:60ch;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
     }
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 18px}
-    .chip{
-      font-size:12px; color:var(--muted);
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.16);
-    }
-
-    .heroActions{display:flex; gap:10px; flex-wrap:wrap}
-    .heroActions .btn{padding:11px 14px}
-
-    /* Right summary */
-    .side{
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: var(--shadow);
-    }
-    .side h3{margin:0 0 8px; font-size:13px; color:var(--muted)}
-    .mandate{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      border-radius: var(--radius2);
-      padding:14px;
-      margin-bottom:12px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    .grid{
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
+      gap: 8px;
     }
-    .stat{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.16);
-      border-radius: var(--radius2);
-      padding:12px;
-    }
-    .stat b{display:block; font-size:12px; color:var(--muted2); font-weight:600}
-    .stat span{display:block; margin-top:6px; font-size:13px; color:var(--text)}
-    .stat small{display:block; margin-top:6px; font-size:12px; color:var(--muted2); line-height:1.35}
-
-    /* Sections */
-    .section{
-      margin-top:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      padding:22px;
-      box-shadow: var(--shadow);
-    }
-    .section h2{margin:0 0 8px; font-size:18px; letter-spacing:-.01em}
-    .section p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
-    .cols{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.16);
-      border-radius: var(--radius2);
-      padding:14px;
-    }
-    .card h4{margin:0 0 6px; font-size:14px}
-    .card p{margin:0; font-size:13px; color:var(--muted); line-height:1.55}
-
-    /* Inquiries */
-    .formRow{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:14px;
-    }
-    label{display:block; font-size:12px; color:var(--muted2); margin:0 0 6px}
-    input, textarea, select{
-      width:100%;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      color:var(--text);
-      padding:11px 12px;
-      border-radius:12px;
-      outline:none;
-      font-size:14px;
-    }
-    input:focus, textarea:focus, select:focus{border-color: rgba(32,227,255,.45)}
-    textarea{min-height:110px; resize:vertical; grid-column:1/-1}
-
-    .fine{
-      margin-top:10px;
-      color:var(--muted2);
-      font-size:12px;
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: 13px;
       line-height:1.45;
     }
+    .tick{
+      width:18px; height:18px; border-radius: 7px;
+      background: rgba(52,211,153,.12);
+      border: 1px solid rgba(52,211,153,.26);
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      margin-top: 1px;
+      color: var(--good);
+      font-weight: 900;
+      font-size: 12px;
+    }
 
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.20);
+    }
+    .card h4{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(34,211,238,.22);
+      background: rgba(34,211,238,.06);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .span6{ grid-column: span 6; }
+    .span4{ grid-column: span 4; }
+    .span8{ grid-column: span 8; }
+    .span12{ grid-column: span 12; }
+
+    /* Quote / positioning */
+    .quote{
+      position:relative;
+      padding: 20px 18px;
+      border: 1px solid rgba(34,211,238,.22);
+      background: linear-gradient(180deg, rgba(34,211,238,.07), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    .quote strong{ color:var(--text); }
+    .quote p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    form{
+      display:grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    label{
+      font-size: 12px;
+      color: var(--muted2);
+      display:block;
+      margin-bottom: 6px;
+    }
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(5,12,18,.45);
+      color: var(--text);
+      outline:none;
+      font-size: 13px;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(34,211,238,.40);
+      box-shadow: 0 0 0 4px rgba(34,211,238,.10);
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+
+    .status{
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: 6px;
+      min-height: 18px;
+    }
+    .fine{
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.55;
+    }
+    .fine a{ text-decoration:underline; }
+
+    /* Footer */
     footer{
-      margin-top:18px;
-      text-align:center;
-      color:var(--muted2);
-      font-size:12px;
-      padding:18px 0 0;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
     }
 
-    /* Mobile */
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr; gap:14px}
-      nav{display:none}
-      .brand{min-width:auto}
-      .cta{min-width:auto}
-      .headline{font-size:38px}
-      .cols{grid-template-columns:1fr}
-      .formRow{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr 1fr}
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
+      .span6{ grid-column: span 12; }
+      .span4{ grid-column: span 12; }
+      .span8{ grid-column: span 12; }
     }
-    @media (max-width: 520px){
-      .headline{font-size:32px}
-      .grid{grid-template-columns:1fr}
-      .top .inner{padding:12px 14px}
-      .wrap{padding:18px 14px 60px}
-      .heroCard{padding:18px}
-      .side{padding:16px}
-      .section{padding:18px}
+    @media (max-width: 420px){
+      .hero h2{ font-size: 30px; }
+      .btn{ width:100%; }
+      .nav{ display:none; }
     }
   </style>
 </head>
 
 <body>
-  <header class="top">
-    <div class="inner">
+  <div class="wrap">
+
+    <!-- Top -->
+    <div class="topbar">
       <div class="brand">
-        <div class="logo">MA</div>
+        <div class="logo" aria-hidden="true"></div>
         <div>
           <h1>MotionAI.ai</h1>
           <p>Execution infrastructure for autonomous and physical AI</p>
         </div>
       </div>
 
-      <nav>
-        <a href="#platform">Platform</a>
-        <a href="#why">Why</a>
-        <a href="#inquiries">Inquiries</a>
-      </nav>
-
-      <div class="cta">
-        <a class="btn" href="#inquiries">Strategic inquiries</a>
-        <a class="btn primary" href="#inquiries">Limited access</a>
+      <div class="nav">
+        <a href="#positioning">Positioning</a>
+        <a href="#usecases">Use cases</a>
+        <a href="#buyers">Acquisition fit</a>
+        <a href="#contact">Contact</a>
       </div>
+
+      <a class="btn primary" href="#contact">Inquire</a>
     </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="heroCard">
-        <div class="kicker"><span class="kdot"></span> Infrastructure positioning • enterprise tone • acquisition-ready</div>
-
-        <h2 class="headline">Execution infrastructure for autonomous and physical AI</h2>
-
+    <!-- Hero -->
+    <section class="hero">
+      <div class="panel heroLeft">
+        <div class="kicker"><span class="dot"></span> Acquisition-ready domain asset • Infrastructure-grade narrative</div>
+        <h2>Execution infrastructure for autonomous and physical AI</h2>
         <p class="sub">
-          Models can plan. Enterprises need systems that can execute.
-          MotionAI.ai is positioned as the operational layer that turns AI intent into reliable,
-          observable, real-world outcomes across robotics, logistics, mobility, and industrial automation.
+          MotionAI.ai is positioned as the execution layer between perception, planning, and the real world —
+          built for robotics, industrial autonomy, logistics, and safety-critical systems where reliability and control matter.
         </p>
 
-        <div class="chips">
-          <span class="chip">Execution-native</span>
-          <span class="chip">Reliability-first</span>
-          <span class="chip">Orchestration</span>
-          <span class="chip">Safety + control</span>
-          <span class="chip">Observability</span>
-          <span class="chip">Selective access</span>
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact">Request pricing / availability</a>
+          <a class="btn" href="#buyers">See acquisition fit</a>
         </div>
 
-        <div class="heroActions">
-          <a class="btn primary" href="#inquiries">Request access</a>
-          <a class="btn" href="#platform">View platform brief</a>
-          <a class="btn" href="#why">Why MotionAI</a>
-        </div>
+        <p class="mini">
+          <b>Signal:</b> clean naming, clear category positioning, enterprise-ready tone. <br/>
+          <b>Use:</b> hold as a premium asset, partner with builders, or acquire for a platform brand.
+        </p>
       </div>
 
-      <aside class="side">
-        <h3>Acquisition snapshot</h3>
-        <div class="mandate">
-          Digital AI is accelerating. The bottleneck is execution: latency, safety, integration, and control.
-          MotionAI.ai frames the missing layer between intelligence and action.
+      <aside class="panel heroRight">
+        <div class="metric">
+          <div class="top">
+            <div class="badge">MOTIONAI.AI</div>
+            <div style="font-size:12px;color:var(--muted2);">High-intent category name</div>
+          </div>
+          <h3>Built for real-world execution</h3>
+          <p>Where AI meets motion, control, safety, and operations.</p>
+
+          <ul class="list">
+            <li class="li"><span class="tick">✓</span> Clear enterprise narrative (not hype)</li>
+            <li class="li"><span class="tick">✓</span> Strong fit for robotics + autonomy buyers</li>
+            <li class="li"><span class="tick">✓</span> Designed to be “acquisition-grade”</li>
+          </ul>
         </div>
-        <div class="grid">
-          <div class="stat">
-            <b>Category</b>
-            <span>Execution infrastructure</span>
-            <small>Positioned beneath applications and above hardware</small>
-          </div>
-          <div class="stat">
-            <b>Layer</b>
-            <span>Autonomous execution</span>
-            <small>Turns intent into controlled outcomes</small>
-          </div>
-          <div class="stat">
-            <b>Fit</b>
-            <span>Robotics + logistics</span>
-            <small>Mobility, industrial automation, simulation ops</small>
-          </div>
-          <div class="stat">
-            <b>Access</b>
-            <span>Selective</span>
-            <small>Strategic partnerships & acquisition conversations</small>
-          </div>
+
+        <div class="metric">
+          <h3>What MotionAI represents</h3>
+          <p>
+            A brand for teams building dependable autonomy:
+            orchestration, safety layers, workflows, and control systems that ship into production.
+          </p>
         </div>
       </aside>
     </section>
 
-    <section class="section" id="platform">
-      <h2>Platform positioning</h2>
-      <p>
-        MotionAI.ai is not a consumer robotics brand. It is an enterprise execution layer:
-        orchestration, policy control, and observability for systems operating in the physical world.
-      </p>
+    <!-- Positioning -->
+    <section id="positioning" class="grid">
+      <div class="quote span12">
+        <p>
+          <strong>Most AI value is lost between “model output” and “real-world execution.”</strong>
+          MotionAI.ai is positioned as the infrastructure that closes that gap —
+          turning intelligence into reliable actions across machines, facilities, fleets, and field operations.
+        </p>
+      </div>
 
-      <div class="cols">
-        <div class="card">
-          <h4>Agent execution</h4>
-          <p>Coordinates autonomous agents across changing environments, turning decisions into controlled action.</p>
-        </div>
-        <div class="card">
-          <h4>Workflow orchestration</h4>
-          <p>Connects humans, machines, and automation into a single execution fabric with clear state and handoffs.</p>
-        </div>
-        <div class="card">
-          <h4>Operational readiness</h4>
-          <p>Designed around safety constraints, reliability, latency, and auditability in real deployments.</p>
+      <div class="card span4">
+        <div class="pill">Category positioning</div>
+        <h4>Execution layer</h4>
+        <p>
+          Positioned as the bridge between perception/planning and action:
+          orchestrating tasks, constraints, fallbacks, and human-in-the-loop controls.
+        </p>
+      </div>
+
+      <div class="card span4">
+        <div class="pill">Enterprise trust</div>
+        <h4>Safety + reliability</h4>
+        <p>
+          Built for environments where “close enough” fails:
+          safety envelopes, audit trails, escalation, and deterministic behavior.
+        </p>
+      </div>
+
+      <div class="card span4">
+        <div class="pill">Compounding advantage</div>
+        <h4>Operational flywheel</h4>
+        <p>
+          The real leverage isn’t the model — it’s the workflow.
+          MotionAI is framed as the system that compounds efficiency and uptime.
+        </p>
+      </div>
+    </section>
+
+    <!-- Use cases -->
+    <section id="usecases" class="grid">
+      <div class="card span8">
+        <div class="pill">Use cases</div>
+        <h4>Where MotionAI.ai fits</h4>
+        <p>
+          This name aligns with high-value categories where autonomy must execute safely and consistently:
+          robotics stacks, warehouse automation, industrial control, fleet routing, inspection, and field service.
+        </p>
+        <ul class="list" style="margin-top:12px;">
+          <li class="li"><span class="tick">✓</span> Robotics orchestration (task execution, sequencing, guardrails)</li>
+          <li class="li"><span class="tick">✓</span> Industrial autonomy (monitor → decide → act loops)</li>
+          <li class="li"><span class="tick">✓</span> Logistics & fleets (dispatch, routing, exception handling)</li>
+          <li class="li"><span class="tick">✓</span> Safety-critical workflows (auditability, escalation, fallback states)</li>
+          <li class="li"><span class="tick">✓</span> Field ops (inspection, work orders, execution intelligence)</li>
+        </ul>
+      </div>
+
+      <div class="card span4">
+        <div class="pill">Brand strength</div>
+        <h4>Why the name works</h4>
+        <p>
+          “Motion” signals the physical world. “AI” signals intelligence.
+          Together: a clean umbrella brand for autonomous execution and real-world control.
+        </p>
+        <p style="margin-top:10px;color:var(--muted2);font-size:12px;line-height:1.55;">
+          A strong domain isn’t just an address — it’s positioning. This page is structured to sell the narrative,
+          not just the letters.
+        </p>
+      </div>
+    </section>
+
+    <!-- Acquisition fit -->
+    <section id="buyers" class="grid">
+      <div class="card span6">
+        <div class="pill">Acquisition fit</div>
+        <h4>Ideal buyer profiles</h4>
+        <p>MotionAI.ai is positioned for enterprise-grade acquirers and serious builders:</p>
+        <ul class="list" style="margin-top:12px;">
+          <li class="li"><span class="tick">✓</span> Robotics platforms + autonomy stacks</li>
+          <li class="li"><span class="tick">✓</span> Industrial automation + manufacturing software</li>
+          <li class="li"><span class="tick">✓</span> Logistics tech + fleet optimization</li>
+          <li class="li"><span class="tick">✓</span> Defense / safety-critical systems integrators</li>
+          <li class="li"><span class="tick">✓</span> Infrastructure funds / strategic buyers</li>
+        </ul>
+      </div>
+
+      <div class="card span6">
+        <div class="pill">Asset status</div>
+        <h4>Ownership + intent</h4>
+        <p>
+          MotionAI.ai is privately owned and presented for strategic acquisition,
+          partnership, or premium purchase. The goal is alignment with a serious buyer —
+          not high-volume brokering.
+        </p>
+        <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.55;">
+          If you’re building where autonomy meets operations, this brand can become the front door.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="grid">
+      <div class="card span12">
+        <div class="pill">Contact</div>
+        <h4>Inquire about MotionAI.ai</h4>
+        <p>
+          Use the form below to request pricing, acquisition details, or partnership discussion.
+          Serious inquiries only.
+        </p>
+
+        <div class="contact" style="margin-top:12px;">
+          <div class="card" style="border-color: rgba(34,211,238,.18); background: rgba(255,255,255,.02);">
+            <form id="inquiryForm" action="https://formspree.io/f/xnjjngql" method="POST">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+
+              <div>
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" placeholder="Company / fund / org" />
+              </div>
+
+              <div>
+                <label for="intent">Interest</label>
+                <select id="intent" name="intent" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Acquire MotionAI.ai</option>
+                  <option>Partnership / build</option>
+                  <option>Broker / represent buyer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Share what you're building and your timeline." required></textarea>
+              </div>
+
+              <!-- Helpful metadata -->
+              <input type="hidden" name="domain" value="motionai.ai" />
+              <input type="hidden" name="page" value="landing" />
+
+              <button class="btn primary" type="submit">Send inquiry</button>
+              <div id="formStatus" class="status"></div>
+            </form>
+          </div>
+
+          <div class="card" style="background: rgba(255,255,255,.02);">
+            <h4 style="margin-top:0;">What to include</h4>
+            <p class="fine">
+              To move quickly, include:
+              <br/>• who you are + what you’re building
+              <br/>• acquisition vs partnership intent
+              <br/>• timeline + budget range (if applicable)
+              <br/>• preferred contact method
+            </p>
+
+            <div style="height:12px;"></div>
+
+            <h4>Response</h4>
+            <p class="fine">
+              If it’s a fit, you’ll receive a reply with next steps.
+              Unsolicited mass outreach, scraping, or non-serious offers may not receive a response.
+            </p>
+
+            <div style="height:12px;"></div>
+
+            <h4>Note</h4>
+            <p class="fine">
+              This page is designed as an acquisition-grade asset presentation.
+              It does not represent an operating product unless explicitly stated in writing.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="why">
-      <h2>Why MotionAI</h2>
-      <p>
-        The next decade is not just better models. It’s systems that can operate in the world.
-        MotionAI.ai aligns with the TravelAir.ai portfolio narrative: category ownership, trust, and infrastructure.
-      </p>
-
-      <div class="cols">
-        <div class="card">
-          <h4>Infrastructure over apps</h4>
-          <p>Compounding value: the layer beneath products becomes the platform others build on.</p>
-        </div>
-        <div class="card">
-          <h4>Enterprise tone</h4>
-          <p>Clear positioning, conservative claims, and acquisition-friendly language by design.</p>
-        </div>
-        <div class="card">
-          <h4>Ownable category signal</h4>
-          <p>Short, memorable domain built for long-horizon brand value and strategic outcomes.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="inquiries">
-      <h2>Strategic inquiries</h2>
-      <p>
-        For partnership discussions, platform interest, or acquisition conversations.
-        Selective access. No mass outreach.
-      </p>
-
-      <!-- SAME FORMSPREE (your existing one) -->
-      <form action="https://formspree.io/f/xnjjngql" method="POST">
-        <div class="formRow">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" required />
-          </div>
-          <div>
-            <label for="company">Company</label>
-            <input id="company" name="company" placeholder="Company / fund" />
-          </div>
-          <div>
-            <label for="interest">Interest</label>
-            <select id="interest" name="interest">
-              <option>Partnership</option>
-              <option>Platform interest</option>
-              <option>Acquisition discussion</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <textarea name="message" placeholder="What are you exploring? Timeline, use-case, or acquisition criteria."></textarea>
-        </div>
-
-        <button class="btn primary" type="submit">Send inquiry</button>
-        <div class="fine">
-          MotionAI.ai is privately held. Information shared is non-confidential unless otherwise agreed in writing.
-        </div>
-      </form>
-    </section>
-
+    <!-- Footer -->
     <footer>
-      © <span id="y"></span> MotionAI.ai • All rights reserved • Privately held
+      <div>© <span id="year"></span> MotionAI.ai. All rights reserved.</div>
+      <div style="color:var(--muted2);">
+        MotionAI.ai is privately owned • Inquiries via the form above
+      </div>
     </footer>
-  </main>
+
+  </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formspree UX (no dependencies)
+    const form = document.getElementById('inquiryForm');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Sending...';
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          statusEl.textContent = 'Sent. Thank you — we’ll be in touch.';
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          statusEl.textContent = data?.error || 'Something went wrong. Please try again.';
+        }
+      } catch (err) {
+        statusEl.textContent = 'Network error. Please try again.';
+      }
+    });
   </script>
 </body>
 </html>
