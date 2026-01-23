@@ -3,53 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MotionAI.ai — Execution Infrastructure for Autonomous & Physical AI</title>
+  <title>MotionAI.ai — Execution Infrastructure for Physical AI</title>
 
-  <meta name="description" content="MotionAI.ai is positioned as execution infrastructure for autonomous and physical AI systems — bridging perception, planning, and reliable real-world action. Available for strategic acquisition." />
+  <meta name="description" content="MotionAI.ai is positioned as execution infrastructure for physical and autonomous AI systems — bridging perception, planning, and reliable real-world action. Available for strategic acquisition." />
 
   <style>
     :root{
       --bg:#05070D;
       --panel:#0B1220;
-      --text:#F3F6FF;
-      --muted:#C9D3EA;
-      --muted2:#AAB6D4;
+
+      --text:#F5F7FF;
+      --muted:#CBD4EA;
+      --muted2:#AEBAD6;
+
       --line:rgba(255,255,255,.18);
 
-      --a1:#5F8CFF;    /* execution */
-      --a2:#8B6CFF;    /* autonomy */
-      --a1soft:rgba(95,140,255,.12);
-      --a2soft:rgba(139,108,255,.10);
+      --exec:#5F8CFF;   /* execution */
+      --phys:#8B6CFF;   /* physical / autonomy */
+      --execSoft:rgba(95,140,255,.12);
+      --physSoft:rgba(139,108,255,.10);
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
-        radial-gradient(900px 420px at 15% -10%, var(--a1soft), transparent 60%),
-        radial-gradient(700px 380px at 85% 10%, var(--a2soft), transparent 65%),
+        radial-gradient(900px 420px at 15% -10%, var(--execSoft), transparent 60%),
+        radial-gradient(700px 380px at 85% 10%, var(--physSoft), transparent 65%),
         var(--bg);
       color:var(--text);
       line-height:1.6;
     }
 
     a{color:inherit; text-decoration:none}
-    .container{max-width:1060px; margin:0 auto; padding:42px 20px 92px}
 
+    .container{
+      max-width:1080px;
+      margin:0 auto;
+      padding:42px 20px 96px;
+    }
+
+    /* Header */
     header{
       display:flex;
       justify-content:space-between;
-      align-items:center;
-      gap:14px;
-      margin-bottom:34px;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:36px;
     }
-    .brand{display:flex; flex-direction:column; gap:4px}
-    .logo{font-size:20px; font-weight:800; letter-spacing:.4px}
-    .meta{font-size:12px; color:rgba(201,211,234,.88)}
 
-    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .logo{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:.4px;
+    }
+
+    .meta{
+      font-size:12px;
+      color:rgba(203,212,234,.88);
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     nav a{
       font-size:13px;
       color:#D6DEEF;
@@ -59,111 +88,153 @@
       background:rgba(255,255,255,.03);
       transition:.15s ease;
     }
+
     nav a:hover{
       color:#FFFFFF;
-      border-color:rgba(255,255,255,.35);
+      border-color:rgba(255,255,255,.36);
       transform:translateY(-1px);
     }
 
+    /* Hero */
     .hero{
       border:1px solid rgba(255,255,255,.20);
-      border-radius:18px;
-      padding:28px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-radius:20px;
+      padding:28px 20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
     }
 
-    .pills{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px}
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
     .pill{
       display:inline-flex;
       align-items:center;
       padding:7px 12px;
       border-radius:999px;
-      border:1px solid rgba(95,140,255,.45);
-      background:rgba(95,140,255,.12);
-      color:#E2E9FF;
       font-size:12px;
       font-weight:600;
       letter-spacing:.15px;
       white-space:nowrap;
     }
-    .pill.alt{
-      border-color:rgba(139,108,255,.45);
-      background:rgba(139,108,255,.12);
-      color:#ECE6FF;
+
+    .pill.exec{
+      border:1px solid rgba(95,140,255,.45);
+      background:rgba(95,140,255,.14);
+      color:#E6ECFF;
     }
+
+    .pill.phys{
+      border:1px solid rgba(139,108,255,.45);
+      background:rgba(139,108,255,.14);
+      color:#EEE9FF;
+    }
+
     .pill.neutral{
-      border-color:rgba(255,255,255,.24);
+      border:1px solid rgba(255,255,255,.26);
       background:rgba(255,255,255,.06);
-      color:#E6ECFA;
+      color:#E7ECF8;
       font-weight:560;
     }
 
     h1{
       margin:10px 0 12px;
       font-size:42px;
-      line-height:1.06;
+      line-height:1.05;
       letter-spacing:-.7px;
-      color:#F5F7FF;
+      color:#F7F9FF;
     }
+
     .subhead{
       font-size:17px;
       color:var(--muted);
       max-width:920px;
-      margin:0 0 18px;
+      margin:0 0 20px;
     }
 
-    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:12px 14px;
+      padding:13px 16px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:700;
       font-size:14px;
+      font-weight:700;
       transition:.15s ease;
+      cursor:pointer;
     }
-    .btn:hover{border-color:rgba(255,255,255,.32); transform:translateY(-1px)}
+
     .btn.primary{
       border:1px solid rgba(95,140,255,.45);
-      background: linear-gradient(135deg, rgba(95,140,255,.22), rgba(139,108,255,.16));
-      box-shadow: 0 0 0 rgba(0,0,0,0);
+      background:
+        linear-gradient(135deg, rgba(95,140,255,.26), rgba(139,108,255,.18));
+      color:#FFFFFF;
     }
+
     .btn.primary:hover{
-      box-shadow: 0 12px 34px rgba(95,140,255,.22);
+      box-shadow:0 14px 36px rgba(95,140,255,.24);
+      transform:translateY(-1px);
+    }
+
+    .btn.secondary{
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.05);
+      color:#F1F4FF;
+    }
+
+    .btn.secondary:hover{
+      border-color:rgba(255,255,255,.40);
+      transform:translateY(-1px);
     }
 
     .grid{
       display:grid;
       grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
+      gap:16px;
+      margin-top:22px;
     }
-    @media (min-width:940px){
+
+    @media (min-width:960px){
       .grid{grid-template-columns:1.15fr .85fr}
     }
 
     .card{
       border:1px solid rgba(255,255,255,.18);
-      border-radius:16px;
-      padding:18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:18px;
+      padding:20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
     }
+
     .card h2{
       margin:0 0 8px;
       font-size:18px;
       letter-spacing:-.2px;
-      color:#F2F6FF;
+      color:#F3F6FF;
     }
-    .card p{margin:0; color:var(--muted2)}
 
-    section{margin-top:28px}
+    .card p{
+      margin:0;
+      color:var(--muted2);
+    }
+
+    /* Sections */
+    section{margin-top:34px}
+
     .sectionTitle{
-      margin:0 0 10px;
       font-size:16px;
+      margin-bottom:12px;
       color:#F0F4FF;
       letter-spacing:-.2px;
     }
@@ -171,50 +242,72 @@
     .twoCol{
       display:grid;
       grid-template-columns:1fr;
-      gap:14px;
-      margin-top:12px;
+      gap:16px;
     }
-    @media (min-width:940px){
+
+    @media (min-width:960px){
       .twoCol{grid-template-columns:1fr 1fr}
     }
 
     .box{
       border:1px solid rgba(255,255,255,.18);
-      border-radius:16px;
-      padding:20px;
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:18px;
+      padding:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
     }
-    .box p{margin:0; color:var(--muted)}
+
+    .box p{
+      margin:0;
+      color:var(--muted);
+    }
+
     .box p + p{margin-top:10px}
 
-    ul{margin:0; padding-left:18px; color:var(--muted)}
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
     li{margin:10px 0}
 
-    form{display:grid; gap:12px; margin-top:16px}
-    label{font-size:13px; color:rgba(201,211,234,.9)}
+    /* Form */
+    form{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    label{
+      font-size:13px;
+      color:rgba(203,212,234,.9);
+    }
+
     input, select, textarea{
       width:100%;
-      padding:12px 12px;
+      padding:12px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.20);
       background:#0A1120;
-      color:var(--text);
+      color:#FFFFFF;
       outline:none;
     }
-    textarea{min-height:120px; resize:vertical}
+
+    textarea{min-height:120px}
 
     .fine{
       font-size:12px;
-      color:rgba(201,211,234,.78);
+      color:rgba(203,212,234,.78);
       margin-top:10px;
     }
 
     footer{
-      margin-top:62px;
+      margin-top:70px;
       padding-top:22px;
       border-top:1px solid rgba(255,255,255,.14);
       font-size:12px;
-      color:rgba(201,211,234,.78);
+      color:rgba(203,212,234,.78);
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
@@ -229,7 +322,9 @@
     <header>
       <div class="brand">
         <div class="logo">MotionAI.ai</div>
-        <div class="meta">Privately owned • Acquisition-ready domain asset • Available via Afternic</div>
+        <div class="meta">
+          Privately owned • Acquisition-ready domain asset • Available via Afternic
+        </div>
       </div>
       <nav>
         <a href="#positioning">Positioning</a>
@@ -240,84 +335,96 @@
       </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero" id="positioning">
       <div class="pills">
-        <span class="pill">Execution infrastructure</span>
-        <span class="pill alt">Autonomous & physical AI</span>
+        <span class="pill exec">Execution infrastructure</span>
+        <span class="pill phys">Physical AI</span>
         <span class="pill neutral">Enterprise positioning</span>
         <span class="pill neutral">Strategic acquisition</span>
       </div>
 
-      <h1>Execution infrastructure for autonomous and physical AI</h1>
+      <h1>Execution infrastructure for physical AI</h1>
 
       <p class="subhead">
-        MotionAI.ai is positioned as the execution layer between perception, planning, and real-world action —
-        built for environments where autonomy must operate safely, predictably, and at scale.
+        MotionAI.ai is positioned as the execution layer between perception, planning,
+        and autonomous real-world action — built for environments where systems must
+        operate safely, predictably, and at scale.
       </p>
 
       <div class="ctaRow">
-        <a class="btn primary" href="#contact">Request availability</a>
-        <a class="btn" href="#fit">View acquisition fit</a>
+        <a class="btn primary" href="#contact">Request acquisition availability</a>
+        <a class="btn secondary" href="#fit">View acquisition fit</a>
       </div>
 
       <div class="grid">
         <div class="card">
           <h2>What this brand communicates</h2>
           <p>
-            MotionAI reads as serious, physical, and infrastructure-grade — the layer that makes autonomy reliable:
-            orchestration, guardrails, control, and execution in the real world.
+            MotionAI reads as serious, physical, and infrastructure-grade — the layer
+            that makes autonomy reliable through orchestration, guardrails, control,
+            and execution in the real world.
           </p>
         </div>
         <div class="card">
           <h2>How acquirers deploy it</h2>
           <p>
-            As a platform name, product line, infrastructure layer, or holding-company identity — built to sit beside
-            robotics, industrial autonomy, logistics, or safety-critical systems.
+            As a platform name, product line, infrastructure layer, or holding-company
+            identity — designed to sit beside robotics, industrial autonomy, logistics,
+            or safety-critical systems.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- WHY -->
     <section id="why">
-      <div class="sectionTitle">Why this category is valuable</div>
+      <div class="sectionTitle">Why this category matters now</div>
       <div class="box">
         <p>
-          As models improve, the bottleneck shifts downstream. The hardest problems aren’t only perception or reasoning —
-          they’re execution: orchestration, exception handling, safety, compliance, and reliable behavior under variability.
+          As AI models improve, the bottleneck shifts downstream. The hardest problems
+          are no longer only perception or reasoning — they are execution: coordination,
+          exception handling, safety, compliance, and reliable behavior in physical
+          environments.
         </p>
         <p>
-          MotionAI.ai is positioned to represent that missing layer — the infrastructure that turns decisions into dependable
-          action across robots, machines, fleets, facilities, and field operations.
+          MotionAI.ai is positioned to represent that missing layer — the infrastructure
+          that turns decisions into dependable action across machines, fleets, facilities,
+          and field operations.
         </p>
       </div>
     </section>
 
+    <!-- USE CASES -->
     <section id="usecases">
       <div class="sectionTitle">High-value use cases</div>
       <div class="twoCol">
         <div class="box">
           <ul>
             <li>Robotics orchestration, task sequencing, and execution control</li>
-            <li>Industrial autonomy: monitor → decide → act loops</li>
-            <li>Logistics and fleets: dispatch, routing, exception handling</li>
+            <li>Industrial autonomy and machine coordination</li>
+            <li>Logistics and fleet dispatch, routing, and exception handling</li>
             <li>Safety-critical workflows with auditability and fallback states</li>
-            <li>Field operations: inspection, work orders, physical process automation</li>
+            <li>Field operations, inspection, and physical process automation</li>
           </ul>
         </div>
         <div class="box">
           <p>
-            This page is intentionally written for enterprise buyers — operators, infrastructure teams, and strategic acquirers
-            evaluating long-term positioning, not short-term launch hype.
+            This page is intentionally written for enterprise buyers — operators,
+            infrastructure teams, and strategic acquirers evaluating long-term
+            positioning rather than short-term product launches.
           </p>
           <p class="fine">
-            If you’re building where autonomy meets operations, MotionAI.ai is a clean, defensible front-door brand.
+            If you’re building where autonomy meets operations, MotionAI.ai is a clean,
+            defensible front-door brand.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- ACQUISITION FIT -->
     <section id="fit">
-      <div class="sectionTitle">Ideal acquirer profile</div>
+      <div class="sectionTitle">Ideal acquisition profile</div>
       <div class="twoCol">
         <div class="box">
           <ul>
@@ -330,67 +437,61 @@
         </div>
         <div class="box">
           <p>
-            MotionAI.ai is offered for strategic acquisition, partnership, or premium purchase.
-            The intent is alignment with a serious buyer — not volume brokering.
+            MotionAI.ai is offered for strategic acquisition, partnership, or premium
+            purchase. The intent is alignment with a serious buyer — not volume brokering.
           </p>
           <p class="fine">
-            Available via Afternic for streamlined transaction, with direct inquiries welcomed below.
+            Available via Afternic for streamlined transaction, with direct inquiries
+            welcomed below.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="sectionTitle">Inquire about MotionAI.ai</div>
       <div class="box">
         <p>
-          Use the form below to request availability, discuss acquisition, or explore partnership/build alignment.
-          Serious inquiries only.
+          Use the form below to request availability, discuss acquisition, or explore
+          partnership alignment. Serious inquiries only.
         </p>
 
         <form action="https://formspree.io/f/xnjjngql" method="POST">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" required />
-          </div>
+          <label>Name</label>
+          <input type="text" name="name" required />
 
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" autocomplete="email" required />
-          </div>
+          <label>Email</label>
+          <input type="email" name="email" required />
 
-          <div>
-            <label for="company">Company (optional)</label>
-            <input id="company" name="company" autocomplete="organization" />
-          </div>
+          <label>Company (optional)</label>
+          <input type="text" name="company" />
 
-          <div>
-            <label for="interest">Inquiry type</label>
-            <select id="interest" name="interest" required>
-              <option value="" selected disabled>Select one</option>
-              <option>Acquire MotionAI.ai</option>
-              <option>Partnership / build</option>
-              <option>Broker representing buyer</option>
-              <option>Other</option>
-            </select>
-          </div>
+          <label>Inquiry type</label>
+          <select name="interest" required>
+            <option value="">Select one</option>
+            <option>Acquire MotionAI.ai</option>
+            <option>Partnership / build</option>
+            <option>Broker representing buyer</option>
+            <option>Other</option>
+          </select>
 
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Who you are, what you’re building, timeline, and (if possible) budget range."></textarea>
-          </div>
+          <label>Message</label>
+          <textarea name="message" placeholder="Who you are, what you’re building, timeline, and (if possible) budget range."></textarea>
 
           <input type="hidden" name="_subject" value="MotionAI.ai — Inquiry" />
 
           <button class="btn primary" type="submit">Send inquiry</button>
 
           <div class="fine">
-            Next steps: if aligned, you’ll receive a reply with availability and process. Low-effort offers may not receive a response.
+            If aligned, you will receive a reply outlining availability and next steps.
+            Low-effort or non-strategic inquiries may not receive a response.
           </div>
         </form>
 
         <div class="fine" style="margin-top:12px">
-          Note: This is an acquisition-grade asset presentation. It does not represent an operating product unless explicitly stated in writing.
+          Note: This is an acquisition-grade asset presentation. It does not represent
+          an operating product unless explicitly stated in writing.
         </div>
       </div>
     </section>
