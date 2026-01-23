@@ -1,691 +1,268 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MotionAI.ai — Execution Infrastructure for Autonomous and Physical AI</title>
-  <meta name="description" content="MotionAI.ai is execution infrastructure for autonomous and physical AI systems — turning intent into reliable real-world action with orchestration, safety, and observability." />
-  <meta name="theme-color" content="#0b1220" />
+  <title>MotionAI.ai — Execution Infrastructure for Autonomous & Physical AI</title>
+
+  <meta name="description" content="MotionAI.ai is positioned as execution infrastructure for autonomous and physical AI systems. Built for robotics, industrial autonomy, logistics, and safety-critical environments. Available for strategic acquisition." />
 
   <style>
-    :root{
-      --bg0:#070b14;
-      --bg1:#0b1220;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.085);
-      --border:rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted:rgba(234,240,255,.72);
-      --muted2:rgba(234,240,255,.55);
-   …
-[9:35 AM, 1/22/2026] .: <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MotionAI.ai — Execution infrastructure for autonomous and physical AI. Acquisition-grade domain asset positioned for robotics, industrial automation, logistics, and safety-critical systems." />
-  <meta name="theme-color" content="#071018" />
-
-  <title>MotionAI.ai — Execution infrastructure for autonomous and physical AI</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="MotionAI.ai — Execution infrastructure for autonomous and physical AI" />
-  <meta property="og:description" content="Infrastructure-grade positioning for autonomy, robotics, logistics, and safety-critical systems. Acquisition-ready brand asset." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.motionai.ai" />
-
-  <style>
-    :root{
-      /* MotionAI colorway (different from TravelAir): deep slate + electric cyan */
-      --bg0:#071018;
-      --bg1:#0A1622;
-      --card:#0B1B2A;
-      --stroke:rgba(255,255,255,.10);
-      --stroke2:rgba(120,220,255,.22);
-
-      --text:#EAF2FF;
-      --muted:rgba(234,242,255,.72);
-      --muted2:rgba(234,242,255,.56);
-
-      --accent:#22D3EE;     /* cyan */
-      --accent2:#60A5FA;    /* soft blue */
-      --good:#34D399;
-
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-
-      --max: 1120px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 18% 10%, rgba(34,211,238,.18), transparent 62%),
-        radial-gradient(900px 520px at 82% 20%, rgba(96,165,250,.14), transparent 60%),
-        radial-gradient(700px 460px at 50% 85%, rgba(34,211,238,.10), transparent 58%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x:hidden;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ width:100%; max-width:var(--max); margin:0 auto; padding: 28px 18px 70px; }
-
-    /* Top bar */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      padding: 8px 0 24px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 220px;
-    }
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.20), transparent 60%),
-        linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.75));
-      box-shadow: 0 14px 40px rgba(34,211,238,.20);
-      border: 1px solid rgba(255,255,255,.16);
-    }
-    .brand h1{
-      margin:0; font-size:16px; letter-spacing:.2px; font-weight:700;
-    }
-    .brand p{
-      margin:2px 0 0; font-size:12px; color:var(--muted2);
-    }
-    .nav{
-      display:flex; align-items:center; gap:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .nav a{
-      font-size:13px;
-      color:var(--muted);
-      padding:10px 10px;
-      border-radius:12px;
-      border: 1px solid transparent;
-    }
-    .nav a:hover{
-      color:var(--text);
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      font-weight:700;
-      font-size:13px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    }
-    .btn:hover{ border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.06); }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.85));
-      border-color: rgba(255,255,255,.18);
-      color:#041018;
-    }
-    .btn.primary:hover{ filter: brightness(1.02); }
-
-    /* Hero */
-    .hero{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items:stretch;
-      margin-top: 4px;
-    }
-    .panel{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .heroLeft{
-      padding: 28px 26px 22px;
-      position:relative;
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .25px;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(34,211,238,.12);
-    }
-    .hero h2{
-      margin: 14px 0 10px;
-      font-size: 34px;
-      line-height: 1.08;
-      letter-spacing: -0.6px;
-    }
-    .sub{
+    body {
       margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-      max-width: 62ch;
-    }
-    .ctaRow{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 18px;
-      align-items:center;
-    }
-    .mini{
-      color: var(--muted2);
-      font-size: 12px;
-      margin-top: 12px;
-      line-height: 1.5;
-    }
-    .mini b{ color: var(--text); font-weight:700; }
-
-    .heroRight{
-      padding: 20px 18px;
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-    .metric{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 16px;
-      padding: 14px 14px;
-    }
-    .metric .top{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-    }
-    .badge{
-      font-size: 11px;
-      letter-spacing:.3px;
-      color: rgba(4,16,24,.92);
-      background: linear-gradient(135deg, rgba(34,211,238,.95), rgba(96,165,250,.85));
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-weight: 800;
-    }
-    .metric h3{
-      margin: 10px 0 6px;
-      font-size: 14px;
-      letter-spacing: -0.2px;
-    }
-    .metric p{
-      margin:0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .list{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 8px;
-    }
-    .li{
-      display:flex; gap:10px; align-items:flex-start;
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.45;
-    }
-    .tick{
-      width:18px; height:18px; border-radius: 7px;
-      background: rgba(52,211,153,.12);
-      border: 1px solid rgba(52,211,153,.26);
-      display:flex; align-items:center; justify-content:center;
-      flex: 0 0 auto;
-      margin-top: 1px;
-      color: var(--good);
-      font-weight: 900;
-      font-size: 12px;
-    }
-
-    /* Sections */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .card{
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius);
-      padding: 18px 18px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.20);
-    }
-    .card h4{
-      margin: 0 0 8px;
-      font-size: 14px;
-      letter-spacing: -0.2px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,211,238,.22);
-      background: rgba(34,211,238,.06);
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .span6{ grid-column: span 6; }
-    .span4{ grid-column: span 4; }
-    .span8{ grid-column: span 8; }
-    .span12{ grid-column: span 12; }
-
-    /* Quote / positioning */
-    .quote{
-      position:relative;
-      padding: 20px 18px;
-      border: 1px solid rgba(34,211,238,.22);
-      background: linear-gradient(180deg, rgba(34,211,238,.07), rgba(255,255,255,.02));
-      border-radius: var(--radius);
-      overflow:hidden;
-    }
-    .quote strong{ color:var(--text); }
-    .quote p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: #070a12;
+      color: #e9eef7;
       line-height: 1.6;
     }
 
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: stretch;
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 22px 90px;
     }
-    form{
-      display:grid;
-      gap: 10px;
-      margin-top: 6px;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
     }
-    label{
-      font-size: 12px;
-      color: var(--muted2);
-      display:block;
-      margin-bottom: 6px;
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
     }
-    input, textarea, select{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(5,12,18,.45);
-      color: var(--text);
-      outline:none;
+
+    .status {
       font-size: 13px;
+      color: #aab4c8;
     }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(34,211,238,.40);
-      box-shadow: 0 0 0 4px rgba(34,211,238,.10);
-    }
-    textarea{ min-height: 110px; resize: vertical; }
 
-    .status{
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
       font-size: 12px;
-      color: var(--muted);
-      padding-top: 6px;
-      min-height: 18px;
+      color: #b9c3da;
+      margin-right: 8px;
+      margin-bottom: 10px;
     }
-    .fine{
-      font-size: 12px;
-      color: var(--muted2);
-      line-height: 1.55;
-    }
-    .fine a{ text-decoration:underline; }
 
-    /* Footer */
-    footer{
+    h1 {
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    .subhead {
+      font-size: 18px;
+      color: #bfc9df;
+      max-width: 900px;
+      margin-bottom: 32px;
+    }
+
+    section {
+      margin-top: 56px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #c1cbe0;
+      max-width: 900px;
+    }
+
+    .box {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 26px;
+      background: rgba(255,255,255,0.03);
+      margin-top: 22px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: #c1cbe0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
       margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: var(--muted2);
-      font-size: 12px;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
     }
 
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      .span6{ grid-column: span 12; }
-      .span4{ grid-column: span 12; }
-      .span8{ grid-column: span 12; }
+    label {
+      font-size: 13px;
+      color: #aab4c8;
     }
-    @media (max-width: 420px){
-      .hero h2{ font-size: 30px; }
-      .btn{ width:100%; }
-      .nav{ display:none; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0b1220;
+      color: #ffffff;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #5f8cff, #8b6cff);
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 12px;
+      color: #9aa4bb;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="container">
 
-    <!-- Top -->
-    <div class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>MotionAI.ai</h1>
-          <p>Execution infrastructure for autonomous and physical AI</p>
-        </div>
-      </div>
+    <header>
+      <div class="logo">MotionAI.ai</div>
+      <div class="status">Privately owned • Available via Afternic</div>
+    </header>
 
-      <div class="nav">
-        <a href="#positioning">Positioning</a>
-        <a href="#usecases">Use cases</a>
-        <a href="#buyers">Acquisition fit</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="pill">Execution infrastructure</div>
+    <div class="pill">Autonomous systems</div>
+    <div class="pill">Physical AI</div>
+    <div class="pill">Enterprise-grade narrative</div>
 
-      <a class="btn primary" href="#contact">Inquire</a>
-    </div>
+    <h1>Execution infrastructure for autonomous and physical AI</h1>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="panel heroLeft">
-        <div class="kicker"><span class="dot"></span> Acquisition-ready domain asset • Infrastructure-grade narrative</div>
-        <h2>Execution infrastructure for autonomous and physical AI</h2>
-        <p class="sub">
-          MotionAI.ai is positioned as the execution layer between perception, planning, and the real world —
-          built for robotics, industrial autonomy, logistics, and safety-critical systems where reliability and control matter.
-        </p>
+    <p class="subhead">
+      MotionAI.ai is positioned as the execution layer between intelligence and the real world —
+      where AI systems move from perception and planning into controlled, reliable action.
+      Built for environments where autonomy must operate safely, predictably, and at scale.
+    </p>
 
-        <div class="ctaRow">
-          <a class="btn primary" href="#contact">Request pricing / availability</a>
-          <a class="btn" href="#buyers">See acquisition fit</a>
-        </div>
-
-        <p class="mini">
-          <b>Signal:</b> clean naming, clear category positioning, enterprise-ready tone. <br/>
-          <b>Use:</b> hold as a premium asset, partner with builders, or acquire for a platform brand.
-        </p>
-      </div>
-
-      <aside class="panel heroRight">
-        <div class="metric">
-          <div class="top">
-            <div class="badge">MOTIONAI.AI</div>
-            <div style="font-size:12px;color:var(--muted2);">High-intent category name</div>
-          </div>
-          <h3>Built for real-world execution</h3>
-          <p>Where AI meets motion, control, safety, and operations.</p>
-
-          <ul class="list">
-            <li class="li"><span class="tick">✓</span> Clear enterprise narrative (not hype)</li>
-            <li class="li"><span class="tick">✓</span> Strong fit for robotics + autonomy buyers</li>
-            <li class="li"><span class="tick">✓</span> Designed to be “acquisition-grade”</li>
-          </ul>
-        </div>
-
-        <div class="metric">
-          <h3>What MotionAI represents</h3>
-          <p>
-            A brand for teams building dependable autonomy:
-            orchestration, safety layers, workflows, and control systems that ship into production.
-          </p>
-        </div>
-      </aside>
-    </section>
-
-    <!-- Positioning -->
-    <section id="positioning" class="grid">
-      <div class="quote span12">
+    <section>
+      <h2>The problem MotionAI is framed to solve</h2>
+      <div class="box">
         <p>
-          <strong>Most AI value is lost between “model output” and “real-world execution.”</strong>
-          MotionAI.ai is positioned as the infrastructure that closes that gap —
-          turning intelligence into reliable actions across machines, facilities, fleets, and field operations.
+          As AI models continue to advance, the hardest problems are no longer accuracy or reasoning —
+          they are execution, coordination, safety, and trust in physical environments.
         </p>
-      </div>
-
-      <div class="card span4">
-        <div class="pill">Category positioning</div>
-        <h4>Execution layer</h4>
         <p>
-          Positioned as the bridge between perception/planning and action:
-          orchestrating tasks, constraints, fallbacks, and human-in-the-loop controls.
-        </p>
-      </div>
-
-      <div class="card span4">
-        <div class="pill">Enterprise trust</div>
-        <h4>Safety + reliability</h4>
-        <p>
-          Built for environments where “close enough” fails:
-          safety envelopes, audit trails, escalation, and deterministic behavior.
-        </p>
-      </div>
-
-      <div class="card span4">
-        <div class="pill">Compounding advantage</div>
-        <h4>Operational flywheel</h4>
-        <p>
-          The real leverage isn’t the model — it’s the workflow.
-          MotionAI is framed as the system that compounds efficiency and uptime.
+          Most failures in autonomous systems occur after the decision is made: during handoff,
+          orchestration, motion control, exception handling, or real-world variability.
+          MotionAI.ai is positioned to represent the infrastructure layer that governs this transition.
         </p>
       </div>
     </section>
 
-    <!-- Use cases -->
-    <section id="usecases" class="grid">
-      <div class="card span8">
-        <div class="pill">Use cases</div>
-        <h4>Where MotionAI.ai fits</h4>
+    <section>
+      <h2>What MotionAI represents</h2>
+      <div class="box">
         <p>
-          This name aligns with high-value categories where autonomy must execute safely and consistently:
-          robotics stacks, warehouse automation, industrial control, fleet routing, inspection, and field service.
+          MotionAI.ai is framed as a category-defining brand for companies building systems that act in
+          the physical world — robots, machines, fleets, facilities, and field operations.
         </p>
-        <ul class="list" style="margin-top:12px;">
-          <li class="li"><span class="tick">✓</span> Robotics orchestration (task execution, sequencing, guardrails)</li>
-          <li class="li"><span class="tick">✓</span> Industrial autonomy (monitor → decide → act loops)</li>
-          <li class="li"><span class="tick">✓</span> Logistics & fleets (dispatch, routing, exception handling)</li>
-          <li class="li"><span class="tick">✓</span> Safety-critical workflows (auditability, escalation, fallback states)</li>
-          <li class="li"><span class="tick">✓</span> Field ops (inspection, work orders, execution intelligence)</li>
+        <p>
+          The name intentionally bridges intelligence and movement. “Motion” signals the real world.
+          “AI” signals adaptive decision-making. Together, they define a clean umbrella for execution-focused autonomy.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>High-value use cases</h2>
+      <div class="box">
+        <ul>
+          <li>Robotics orchestration, task sequencing, and execution control</li>
+          <li>Industrial autonomy and machine coordination</li>
+          <li>Logistics, fleet routing, and operational execution systems</li>
+          <li>Safety-critical workflows requiring auditability and control</li>
+          <li>Field operations, inspection, and physical process automation</li>
         </ul>
       </div>
-
-      <div class="card span4">
-        <div class="pill">Brand strength</div>
-        <h4>Why the name works</h4>
-        <p>
-          “Motion” signals the physical world. “AI” signals intelligence.
-          Together: a clean umbrella brand for autonomous execution and real-world control.
-        </p>
-        <p style="margin-top:10px;color:var(--muted2);font-size:12px;line-height:1.55;">
-          A strong domain isn’t just an address — it’s positioning. This page is structured to sell the narrative,
-          not just the letters.
-        </p>
-      </div>
     </section>
 
-    <!-- Acquisition fit -->
-    <section id="buyers" class="grid">
-      <div class="card span6">
-        <div class="pill">Acquisition fit</div>
-        <h4>Ideal buyer profiles</h4>
-        <p>MotionAI.ai is positioned for enterprise-grade acquirers and serious builders:</p>
-        <ul class="list" style="margin-top:12px;">
-          <li class="li"><span class="tick">✓</span> Robotics platforms + autonomy stacks</li>
-          <li class="li"><span class="tick">✓</span> Industrial automation + manufacturing software</li>
-          <li class="li"><span class="tick">✓</span> Logistics tech + fleet optimization</li>
-          <li class="li"><span class="tick">✓</span> Defense / safety-critical systems integrators</li>
-          <li class="li"><span class="tick">✓</span> Infrastructure funds / strategic buyers</li>
+    <section>
+      <h2>Ideal acquirer profile</h2>
+      <div class="box">
+        <ul>
+          <li>Robotics and autonomous platform companies</li>
+          <li>Industrial automation and manufacturing software firms</li>
+          <li>Logistics, mobility, and fleet technology providers</li>
+          <li>Defense, infrastructure, and safety-critical system builders</li>
+          <li>Strategic buyers seeking a foundational AI execution brand</li>
         </ul>
       </div>
+    </section>
 
-      <div class="card span6">
-        <div class="pill">Asset status</div>
-        <h4>Ownership + intent</h4>
+    <section id="contact">
+      <h2>Inquire about MotionAI.ai</h2>
+      <div class="box">
         <p>
-          MotionAI.ai is privately owned and presented for strategic acquisition,
-          partnership, or premium purchase. The goal is alignment with a serious buyer —
-          not high-volume brokering.
+          MotionAI.ai is available for strategic acquisition, partnership, or premium purchase.
+          This page is intentionally designed for serious buyers evaluating long-term positioning.
         </p>
-        <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.55;">
-          If you’re building where autonomy meets operations, this brand can become the front door.
-        </p>
+
+        <form action="https://formspree.io/f/xnjjngql" method="POST">
+          <label>Name</label>
+          <input type="text" name="name" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+
+          <label>Company (optional)</label>
+          <input type="text" name="company" />
+
+          <label>Inquiry type</label>
+          <select name="interest" required>
+            <option value="">Select one</option>
+            <option>Acquire MotionAI.ai</option>
+            <option>Partnership / build</option>
+            <option>Broker representing buyer</option>
+            <option>Other</option>
+          </select>
+
+          <label>Message</label>
+          <textarea name="message" placeholder="Who you are, what you're building, and your intended timeline."></textarea>
+
+          <input type="hidden" name="_subject" value="MotionAI.ai Inquiry" />
+
+          <button type="submit">Send inquiry</button>
+        </form>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="grid">
-      <div class="card span12">
-        <div class="pill">Contact</div>
-        <h4>Inquire about MotionAI.ai</h4>
-        <p>
-          Use the form below to request pricing, acquisition details, or partnership discussion.
-          Serious inquiries only.
-        </p>
-
-        <div class="contact" style="margin-top:12px;">
-          <div class="card" style="border-color: rgba(34,211,238,.18); background: rgba(255,255,255,.02);">
-            <form id="inquiryForm" action="https://formspree.io/f/xnjjngql" method="POST">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required />
-              </div>
-
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@company.com" required />
-              </div>
-
-              <div>
-                <label for="company">Company (optional)</label>
-                <input id="company" name="company" type="text" placeholder="Company / fund / org" />
-              </div>
-
-              <div>
-                <label for="intent">Interest</label>
-                <select id="intent" name="intent" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>Acquire MotionAI.ai</option>
-                  <option>Partnership / build</option>
-                  <option>Broker / represent buyer</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Share what you're building and your timeline." required></textarea>
-              </div>
-
-              <!-- Helpful metadata -->
-              <input type="hidden" name="domain" value="motionai.ai" />
-              <input type="hidden" name="page" value="landing" />
-
-              <button class="btn primary" type="submit">Send inquiry</button>
-              <div id="formStatus" class="status"></div>
-            </form>
-          </div>
-
-          <div class="card" style="background: rgba(255,255,255,.02);">
-            <h4 style="margin-top:0;">What to include</h4>
-            <p class="fine">
-              To move quickly, include:
-              <br/>• who you are + what you’re building
-              <br/>• acquisition vs partnership intent
-              <br/>• timeline + budget range (if applicable)
-              <br/>• preferred contact method
-            </p>
-
-            <div style="height:12px;"></div>
-
-            <h4>Response</h4>
-            <p class="fine">
-              If it’s a fit, you’ll receive a reply with next steps.
-              Unsolicited mass outreach, scraping, or non-serious offers may not receive a response.
-            </p>
-
-            <div style="height:12px;"></div>
-
-            <h4>Note</h4>
-            <p class="fine">
-              This page is designed as an acquisition-grade asset presentation.
-              It does not represent an operating product unless explicitly stated in writing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-      <div>© <span id="year"></span> MotionAI.ai. All rights reserved.</div>
-      <div style="color:var(--muted2);">
-        MotionAI.ai is privately owned • Inquiries via the form above
-      </div>
+      <div>© MotionAI.ai</div>
+      <div>Privately owned • Available via Afternic • Direct inquiries welcome</div>
     </footer>
 
   </div>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Formspree UX (no dependencies)
-    const form = document.getElementById('inquiryForm');
-    const statusEl = document.getElementById('formStatus');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending...';
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          statusEl.textContent = 'Sent. Thank you — we’ll be in touch.';
-          form.reset();
-        } else {
-          const data = await res.json().catch(() => ({}));
-          statusEl.textContent = data?.error || 'Something went wrong. Please try again.';
-        }
-      } catch (err) {
-        statusEl.textContent = 'Network error. Please try again.';
-      }
-    });
-  </script>
 </body>
 </html>
